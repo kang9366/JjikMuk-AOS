@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
     app:startDestination="@id/homeFragment">
 
@@ -12,4 +13,37 @@
         android:id="@+id/mypageFragment"
         android:name="com.example.jjikmuk.ui.mypage.MypageFragment"
         android:label="MypageFragment" />
+    <fragment
+        android:id="@+id/onFragment1"
+        android:name="com.example.jjikmuk.ui.OnFragment1"
+        android:label="onfragment_1"
+        tools:layout="@layout/onfragment_1" >
+        <action
+            android:id="@+id/action_onFragment1_to_onFragment2"
+            app:destination="@id/onFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/onFragment2"
+        android:name="com.example.jjikmuk.ui.OnFragment2"
+        android:label="OnFragment2" >
+        <action
+            android:id="@+id/action_onFragment2_to_onFragment3"
+            app:destination="@id/onFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/onFragment3"
+        android:name="com.example.jjikmuk.ui.OnFragment3"
+        android:label="OnFragment3" >
+        <action
+            android:id="@+id/action_onFragment3_to_onFragment4"
+            app:destination="@id/onFragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/onFragment4"
+        android:name="com.example.jjikmuk.ui.OnFragment4"
+        android:label="OnFragment4" >
+        <action
+            android:id="@+id/action_onFragment4_to_onFragment1"
+            app:destination="@id/onFragment1" />
+    </fragment>
 </navigation>

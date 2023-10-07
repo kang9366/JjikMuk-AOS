@@ -1,4 +1,10 @@
 <resources>
+
+    <!-- Kakao KEY설정[AndroidManifest.xml에도 설정]-->
+    <!-- Kakao-init에서 사용 -->
+    <string name="kakao_app_key">40a142ed06feb3d6473919f71b31f35e</string>
+    <!-- AndroidManifest.xml에서 사용 -->
+    <string name="kakao_app_key2">kakao40a142ed06feb3d6473919f71b31f35e</string>
     <string name="app_name">찍먹</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

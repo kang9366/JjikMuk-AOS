@@ -68,6 +68,8 @@ dependencies {
     // 주간 캘린더?
     implementation("com.github.kizitonwose:CalendarView:1.0.4")
 
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
 
 
     implementation("androidx.core:core-ktx:1.9.0")

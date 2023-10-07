@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.example.jjikmuk.R
@@ -160,11 +161,11 @@ class MypageFragment : BaseFragment<FragmentMypageBinding>(R.layout.fragment_myp
         labels.add("일")
 
         val set1 = BarDataSet(entries1, "탄수화물")
-        set1.color = Color.BLUE
+        set1.color = ContextCompat.getColor(requireContext(),R.color.cal_good)
         val set2 = BarDataSet(entries2, "단백질")
-        set2.color = Color.RED
+        set2.color = ContextCompat.getColor(requireContext(),R.color.chart_yellow)
         val set3 = BarDataSet(entries3, "지방")
-        set3.color = Color.GREEN
+        set3.color = ContextCompat.getColor(requireContext(),R.color.chart_blue)
         val barData = BarData(set1, set2, set3)
 
         binding.chart.run {
@@ -197,7 +198,7 @@ class MypageFragment : BaseFragment<FragmentMypageBinding>(R.layout.fragment_myp
             setCenterAxisLabels(true)
             granularity = 0.5f
             axisMinimum = 0f
-            axisMaximum = 400f
+            axisMaximum = 101.0f
         }
 
         binding.chart.axisLeft.run {

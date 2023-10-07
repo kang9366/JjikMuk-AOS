@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_marginTop="8dp"
     android:layout_marginRight="9dp"
     android:gravity="center_horizontal">
 
@@ -23,28 +24,36 @@
         app:cardCornerRadius="10dp"
         android:backgroundTint="@color/white"
         android:layout_marginTop="20dp">
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:textColor="#191919"
-            android:text="9"/>
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:textColor="#191919"
+                android:text="9"/>
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iv_cal_emoji"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_cal_circle" />
 
     <TextView
+        android:id="@+id/tv_cal_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:textSize="12sp"
+        android:textColor="#868686"
         android:fontFamily="@font/pretendard_semibold"
-        android:text="매우 부족"/>
+        android:text=""/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

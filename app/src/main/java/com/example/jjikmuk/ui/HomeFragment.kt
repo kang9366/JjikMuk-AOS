@@ -1,5 +1,6 @@
 package com.example.jjikmuk.ui
 
+import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -11,16 +12,34 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.example.jjikmuk.R
-import com.example.jjikmuk.databinding.FragmentFirstBinding
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
-import android.util.Log
+import com.example.jjikmuk.databinding.FragmentHomeBinding
+import com.example.jjikmuk.ui.adapter.Data
+import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
 
 
-class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.test = this
+        binding.home = this
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView(){
+        val item = ArrayList<Data>()
+        for(i in 0 until 10){
+            item.add(Data("1"))
+        }
+        val adapter = RecyclerViewAdapter(item)
+        binding.recyclerView.adapter = adapter
+
+    }
+
+    fun test(view: View){
+        binding.layouts.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
+        val v = if(binding.details.visibility==View.GONE) View.VISIBLE else View.GONE
+        binding.details.visibility = v
     }
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {
@@ -39,7 +58,6 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first
     fun requestCameraPermission(view: View) {
         when (PackageManager.PERMISSION_GRANTED) {
             ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) -> {
-                Log.d("testtt", "succes")
                 initCamera()
             }
             else -> {
@@ -52,7 +70,6 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            Log.d("testtt", "succes")
             initCamera()
         } else {
             // 권한을 거부한 경우

@@ -2,6 +2,7 @@ package com.example.jjikmuk.ui
 
 import androidx.core.content.ContextCompat.startActivity
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 
 import androidx.appcompat.app.AppCompatActivity

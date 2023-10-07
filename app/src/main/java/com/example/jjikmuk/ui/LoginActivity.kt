@@ -6,14 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
-import android.view.View
-import com.example.jjikmuk.AfterLoginActivity
-
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityLoginBinding
-import com.example.jjikmuk.model.InsufficientNutrientResponse
-import com.example.jjikmuk.model.SignUpRequestBody
-import com.example.jjikmuk.model.SignUpResponse
 import com.example.jjikmuk.network.RetrofitBuilder
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
@@ -21,9 +15,6 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityLoginBinding? = null

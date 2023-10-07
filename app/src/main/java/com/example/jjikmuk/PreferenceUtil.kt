@@ -13,4 +13,8 @@ class PreferenceUtil(context: Context) {
     var name: String?
         get() = pref.getString("name", null)
         set(value) = pref.edit().putString("name", value).apply()
+
+    var dietId: Int
+        get() = pref.getInt("dietId", 0)
+        set(value) = pref.edit().putInt("dietId", value).apply()
 }

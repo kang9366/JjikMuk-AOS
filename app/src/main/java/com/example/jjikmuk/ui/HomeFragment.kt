@@ -28,7 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.home = this
         initRecyclerView()
 
-        setupDietData()
         setNutrients()
     }
 
@@ -63,12 +62,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.recyclerView.adapter = adapter
     }
 
-    private fun setupDietData() {
-        lifecycleScope.launch {
-            val response = RetrofitBuilder.api.getDiet(1).body()
-            dietResponse.postValue(response!!)
-        }
-    }
 
     fun expandCardView(view: View){
         val transition = LayoutTransition()

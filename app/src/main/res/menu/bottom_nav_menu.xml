@@ -3,6 +3,7 @@
     <item
         android:title="홈"
         android:enabled="true"
+        android:checked="true"
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home" />
     <item
@@ -11,6 +12,7 @@
     <item
         android:title="마이"
         android:enabled="true"
+        android:checked="false"
         android:id="@+id/mypageFragment"
-        android:icon="@drawable/ic_home" />
+        android:icon="@drawable/ic_profile" />
 </menu>

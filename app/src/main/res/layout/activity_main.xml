@@ -48,6 +48,8 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
             android:backgroundTint="@color/main_color"
+            app:fabCustomSize="66dp"
+            app:maxImageSize="36dp"
             app:tint="@color/white"
             android:src="@drawable/ic_bottom_nav_icon"
             app:layout_anchor="@id/bottom_app_bar" />

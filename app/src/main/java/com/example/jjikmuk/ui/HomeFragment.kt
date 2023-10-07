@@ -1,5 +1,6 @@
 package com.example.jjikmuk.ui
 
+import android.animation.LayoutTransition
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -14,13 +15,18 @@ import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.FragmentFirstBinding
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
-import android.util.Log
 
 
-class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
+class HomeFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.test = this
+        binding?.home = this
+    }
+
+    fun test(view: View){
+        binding?.layouts?.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
+        val v = if(binding?.details?.visibility==View.GONE) View.VISIBLE else View.GONE
+        binding?.details?.visibility = v
     }
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {
@@ -39,7 +45,6 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first
     fun requestCameraPermission(view: View) {
         when (PackageManager.PERMISSION_GRANTED) {
             ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) -> {
-                Log.d("testtt", "succes")
                 initCamera()
             }
             else -> {
@@ -52,7 +57,6 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
-            Log.d("testtt", "succes")
             initCamera()
         } else {
             // 권한을 거부한 경우

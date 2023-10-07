@@ -31,7 +31,7 @@
             android:textColor="@color/main_color"
             android:fontFamily="@font/pretendard_semibold"
             android:textSize="24sp"/>
-        
+
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#E6E0E9"/>
-        
+
         <TextView
             android:id="@+id/mainTitle"
             android:layout_width="wrap_content"
@@ -66,9 +66,10 @@
             android:id="@+id/subTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
             app:layout_constraintStart_toStartOf="@id/mainTitle"
             app:layout_constraintTop_toBottomOf="@+id/mainTitle"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="21dp"
             android:fontFamily="@font/pretendard_medium"
             android:textColor="#868686"
             android:text="이전 식사의 영양성분이에요"/>
@@ -83,7 +84,7 @@
             android:layout_marginEnd="16dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="74dp"
             android:backgroundTint="#F1F1F1"
             app:layout_constraintTop_toBottomOf="@+id/subTitle">
 
@@ -97,7 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="16dp"
+                    android:paddingVertical="20dp"
                     android:weightSum="3">
 
                     <LinearLayout
@@ -206,7 +207,7 @@
                 android:layout_gravity="right|bottom"
                 android:onClick="@{home.test}"/>
         </androidx.cardview.widget.CardView>
-        
+
         <androidx.cardview.widget.CardView
             android:id="@+id/recommend"
             android:layout_width="0dp"
@@ -216,7 +217,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/info"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="46dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp"
             android:backgroundTint="#F1F1F1">
@@ -261,7 +262,7 @@
                     android:textSize="14sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        
+
         <View
             android:id="@+id/middle"
             android:layout_width="match_parent"
@@ -269,7 +270,7 @@
             app:layout_constraintTop_toBottomOf="@+id/recommend"
             android:layout_marginTop="30dp"
             android:background="#F9F9F9"/>
-        
+
         <TextView
             android:id="@+id/subTitle2"
             android:layout_width="wrap_content"
@@ -282,7 +283,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/pretendard_semibold"
             android:layout_marginStart="16dp"/>
-        
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="0dp"

@@ -2,19 +2,23 @@ package com.example.jjikmuk.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.View
+import android.widget.Toast
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityMainBinding
 import com.example.jjikmuk.network.RetrofitBuilder.api
+import com.example.jjikmuk.util.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+    private lateinit var navController: NavController
+    var navState : Boolean = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
 
         initNavigation()
     }
@@ -24,5 +28,29 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         binding.bottomNavigationBar.setupWithNavController(navController)
+        binding.bottomNavigationBar.background = null
+        binding.bottomNavigationBar.menu.getItem(1).isEnabled = false
+
+        navState = true
+        binding.navState = navState
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.homeFragment || destination.id == R.id.mypageFragment) {
+                binding.bottomAppBar.visibility = View.VISIBLE
+                binding.navigationFab.visibility = View.VISIBLE
+
+                navState = true
+            } else {
+                binding.bottomAppBar.visibility = View.GONE
+                binding.navigationFab.visibility = View.GONE
+
+                navState = false
+            }
+            binding.navState = navState
+        }
+
+        binding.navigationFab.setOnClickListener {
+            Toast.makeText(this, "fab 터치ㅣㅣ", Toast.LENGTH_SHORT).show()
+        }
     }
 }

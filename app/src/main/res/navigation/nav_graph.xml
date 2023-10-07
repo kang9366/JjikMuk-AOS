@@ -2,18 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
+        android:id="@+id/homeFragment"
         android:name="com.example.jjikmuk.ui.HomeFragment"
         android:label="FirstFragment" />
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.jjikmuk.ui.SecondFragment"
-        android:label="SecondFragment" />
-    <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.jjikmuk.ui.ThirdFragment"
-        android:label="ThirdFragment" />
+        android:id="@+id/mypageFragment"
+        android:name="com.example.jjikmuk.ui.MypageFragment"
+        android:label="MypageFragment" />
 </navigation>

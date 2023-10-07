@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object RetrofitBuilder{
     var api: RetrofitService
 
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://ec2-18-224-133-31.us-east-2.compute.amazonaws.com"
 
     private val moshi = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())

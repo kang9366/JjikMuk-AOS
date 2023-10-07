@@ -12,15 +12,12 @@ import android.util.Log
 import android.os.PersistableBundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityMainBinding
-import com.example.jjikmuk.ui.adapter.ImageViewModel
 import com.example.jjikmuk.ui.dialog.CameraActionListener
 import com.example.jjikmuk.ui.dialog.ImageDialog
 import com.example.jjikmuk.util.BaseActivity
@@ -30,7 +27,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     private lateinit var navController: NavController
     private var navState : Boolean = true
     private lateinit var dialog: ImageDialog
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

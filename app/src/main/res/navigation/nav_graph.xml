@@ -10,6 +10,6 @@
         android:label="FirstFragment" />
     <fragment
         android:id="@+id/mypageFragment"
-        android:name="com.example.jjikmuk.ui.MypageFragment"
+        android:name="com.example.jjikmuk.ui.mypage.MypageFragment"
         android:label="MypageFragment" />
 </navigation>

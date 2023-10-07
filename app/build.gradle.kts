@@ -62,6 +62,13 @@ dependencies {
     // BottomAppBar
     implementation("com.google.android.material:material:1.3.0-alpha03")
 
+    // CircleImageView
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    // 주간 캘린더?
+    implementation("com.github.kizitonwose:CalendarView:1.0.4")
+
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

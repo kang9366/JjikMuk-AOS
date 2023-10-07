@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.jjikmuk">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -37,6 +34,7 @@
             android:exported="false"
             android:label="@string/title_activity_check_image"
             android:theme="@style/Theme.JjikMuk" />
+
         <activity
             android:name=".ui.ViewActivity"
             android:exported="true">
@@ -57,10 +55,11 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Kakao 로그인 -->
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true" /> <!-- Kakao 로그인 -->

@@ -4,28 +4,41 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 
 import android.view.View
 import com.example.jjikmuk.AfterLoginActivity
 
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityLoginBinding
-
+import com.example.jjikmuk.model.InsufficientNutrientResponse
+import com.example.jjikmuk.model.SignUpRequestBody
+import com.example.jjikmuk.model.SignUpResponse
+import com.example.jjikmuk.network.RetrofitBuilder
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private var _binding: ActivityLoginBinding? = null
     private val binding get() = _binding!!
+    private val retrofitBuilder = RetrofitBuilder.api
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /** HashKey확인 */
+        val keyHash = Utility.getKeyHash(this)
+        Log.d("hash key key", "HashKey: ${keyHash}")
+
 
         /** KakoSDK init */
         KakaoSdk.init(this, this.getString(R.string.kakao_app_key))
@@ -34,17 +47,15 @@ class LoginActivity : AppCompatActivity() {
 //        binding.btnStartKakaoLogin.setOnClickListener {
 //            kakaoLogin() //로그인
 //        }
-
         binding.btnKakaoLogin.setOnClickListener {
             kakaoLogin()
         }
-
 //        binding.btnStartKakaoLogout.setOnClickListener {
 //            kakaoLogout() //로그아웃
 //        }
-//        binding.btnStartKakaoUnlink.setOnClickListener {
-//            kakaoUnlink() //연결해제
-//        }
+        /*binding.btnStartKakaoUnlink.setOnClickListener {
+            kakaoUnlink() //연결해제
+        }*/
     }
 
     private fun kakaoLogin() {

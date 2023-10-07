@@ -68,7 +68,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/info"
                 android:fontFamily="@font/pretendard_medium"
                 android:textColor="#868686"
-                android:text="이전 식사의 영양성분이에요"/>
+                android:text="이전 식사에서 부족한 영양성분이에요"/>
 
             <ImageView
                 android:id="@+id/character"
@@ -128,21 +128,21 @@
                             android:gravity="center"
                             android:orientation="vertical">
                             <TextView
+                                android:id="@+id/name1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="탄수화물"
                                 android:textSize="14dp"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/pretendard_semibold"
                                 android:textStyle="bold"/>
                             <TextView
+                                android:id="@+id/num1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:textSize="24dp"
                                 android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
+                                android:fontFamily="@font/pretendard_bold"/>
                         </LinearLayout>
 
                         <View
@@ -158,22 +158,22 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/name2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="단백질"
                                 android:textSize="14dp"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/pretendard_semibold"
                                 android:textStyle="bold"/>
 
                             <TextView
+                                android:id="@+id/num2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:textSize="24dp"
                                 android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
+                                android:fontFamily="@font/pretendard_bold"/>
 
                         </LinearLayout>
 
@@ -190,23 +190,23 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/name3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="지방"
                                 android:textSize="14dp"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/pretendard_semibold"
                                 android:textStyle="bold"/>
 
                             <TextView
+                                android:id="@+id/num3"
                                 android:layout_marginStart="3dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:textSize="24dp"
                                 android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
+                                android:fontFamily="@font/pretendard_bold"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -493,9 +493,9 @@
                         android:layout_marginStart="10dp"
                         android:background="#D9D9D9"/>
                     <TextView
+                        android:id="@+id/menu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="고등어 구이"
                         android:layout_marginStart="12dp"
                         android:fontFamily="@font/pretendard_semibold"
                         android:textColor="#868686"

@@ -12,7 +12,6 @@ import android.util.Log
 import android.os.PersistableBundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -33,7 +32,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     private lateinit var navController: NavController
     private var navState : Boolean = true
     private lateinit var dialog: ImageDialog
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

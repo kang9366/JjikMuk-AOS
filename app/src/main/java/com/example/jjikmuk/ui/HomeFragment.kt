@@ -20,19 +20,51 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import com.example.jjikmuk.databinding.FragmentHomeBinding
 import com.example.jjikmuk.network.RetrofitBuilder
+import com.example.jjikmuk.model.InsufficientNutrientResponse
+import com.example.jjikmuk.model.SignUpRequestBody
+import com.example.jjikmuk.model.SignUpResponse
+import com.example.jjikmuk.network.RetrofitBuilder
 import com.example.jjikmuk.ui.adapter.Data
 import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val dietResponse = MutableLiveData<DietResponse>()
+    private val retrofitBuilder = RetrofitBuilder.api
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.home = this
         initRecyclerView()
 
         setupDietData()
+        setNutrients()
+    }
+
+    private fun setNutrients(){
+        retrofitBuilder.getNutrients(1).enqueue(object: Callback<InsufficientNutrientResponse> {
+            override fun onResponse(
+                call: Call<InsufficientNutrientResponse>,
+                response: Response<InsufficientNutrientResponse>
+            ) {
+                binding.num1.text = response.body()!!.nutrientInfoList[0].amount.toString() + "g"
+                binding.name1.text = response.body()!!.nutrientInfoList[0].name
+                binding.name2.text = response.body()!!.nutrientInfoList[1].name
+                binding.num2.text = response.body()!!.nutrientInfoList[1].amount.toString() + "g"
+                binding.name3.text = response.body()!!.nutrientInfoList[2].name
+                binding.num3.text = response.body()!!.nutrientInfoList[2].amount.toString() + "g"
+                binding.menu.text = response.body()!!.goodDietName
+            }
+
+            override fun onFailure(call: Call<InsufficientNutrientResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun initRecyclerView(){

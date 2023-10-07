@@ -1,0 +1,211 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="home"
+            type="com.example.jjikmuk.ui.HomeFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="@id/logo"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
+            android:layout_marginStart="12dp"
+            android:text="@string/app_name"
+            android:textColor="@color/main_color"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textSize="24sp"/>
+        
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintTop_toTopOf="@id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_alarm"/>
+
+        <View
+            android:id="@+id/line"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E0E9"/>
+        
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="민선님, 점심시간이에요\n부족한 영양소를 채우러 갈까요?"
+            android:lineSpacingExtra="4dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textSize="24dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/mainTitle"
+            app:layout_constraintTop_toBottomOf="@+id/mainTitle"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="#868686"
+            android:text="이전 식사의 영양성분이에요"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#F1F1F1"
+            app:layout_constraintTop_toBottomOf="@+id/subTitle">
+
+            <LinearLayout
+                android:id="@+id/layouts"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="탄수화물"
+                            android:textSize="14dp"
+                            android:textColor="#868686"
+                            android:fontFamily="@font/pretendard_semibold"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="24dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="10g"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#D9D9D9" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="단백질"
+                            android:textSize="14dp"
+                            android:textColor="#868686"
+                            android:fontFamily="@font/pretendard_semibold"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="24dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="10g"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#D9D9D9" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="지방"
+                            android:textSize="14dp"
+                            android:textColor="#868686"
+                            android:fontFamily="@font/pretendard_semibold"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_marginStart="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="24dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/pretendard_bold"
+                            android:text="10g"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/details"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="demo"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/expandButton"
+            android:layout_width="36dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="-10dp"
+            android:outlineProvider="none"
+            app:layout_constraintEnd_toEndOf="@+id/info"
+            app:layout_constraintTop_toBottomOf="@+id/info"
+            android:background="@drawable/btn_expand"
+            android:onClick="@{home.test}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

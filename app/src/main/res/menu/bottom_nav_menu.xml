@@ -3,7 +3,7 @@
     <item
         android:title="홈"
         android:enabled="true"
-        android:id="@+id/firstFragment"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home" />
     <item
         android:title=""

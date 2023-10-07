@@ -31,7 +31,7 @@ class ViewActivity : AppCompatActivity() {
 
         var viewPager2Adapter = ViewPager2Adapter(this)
         binding.viewPager.adapter = viewPager2Adapter
-        binding.indicator.setViewPager(binding.viewPager)
+//        binding.indicator.setViewPager(binding.viewPager)
 
         viewPager2Adapter.addFragment(OnFragment1())
         viewPager2Adapter.addFragment(OnFragment2())

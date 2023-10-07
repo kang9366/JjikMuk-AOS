@@ -7,6 +7,19 @@
     android:background="#FFFFFF"
     tools:context=".ui.OnFragment4">
 
+    <TextView
+        android:id="@+id/tv_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="완료"
+        android:textColor="@color/main_color"
+        android:textSize="20sp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
     <FrameLayout
         android:id="@+id/onStart4"
         android:layout_width="match_parent"
@@ -17,10 +30,11 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="80dp"
         android:layout_height="8dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/indicator4"
-        app:layout_constraintBottom_toTopOf="@+id/textView1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/onStart4" />
@@ -30,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="학부모 모드로,\n아이의 식단 추천과 식비 관리를\n받을 수 있어요."
+        android:text="부모 모드로,\n아이의 식단 추천과 영양 관리를 위한\n정보를 얻을 수 있어요."
         android:layout_marginTop="143dp"
         android:textSize="20sp"
         android:fontFamily="@font/pretendard_bold"
@@ -43,10 +57,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="285dp"
-        android:layout_height="341dp"
-        android:layout_marginTop="251dp"
-        android:src="@drawable/onfrag1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="260dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/onfrag4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

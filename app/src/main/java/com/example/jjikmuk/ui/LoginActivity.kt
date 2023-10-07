@@ -25,23 +25,24 @@ class LoginActivity : AppCompatActivity() {
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /** HashKey확인 */
-        val keyHash = Utility.getKeyHash(this)
-        TextMsg(this, "HashKey: ${keyHash}")
-
         /** KakoSDK init */
         KakaoSdk.init(this, this.getString(R.string.kakao_app_key))
 
         /** Click_listener */
-        binding.btnStartKakaoLogin.setOnClickListener {
-            kakaoLogin() //로그인
+//        binding.btnStartKakaoLogin.setOnClickListener {
+//            kakaoLogin() //로그인
+//        }
+
+        binding.btnKakaoLogin.setOnClickListener {
+            kakaoLogin()
         }
-        binding.btnStartKakaoLogout.setOnClickListener {
-            kakaoLogout() //로그아웃
-        }
-        binding.btnStartKakaoUnlink.setOnClickListener {
-            kakaoUnlink() //연결해제
-        }
+
+//        binding.btnStartKakaoLogout.setOnClickListener {
+//            kakaoLogout() //로그아웃
+//        }
+//        binding.btnStartKakaoUnlink.setOnClickListener {
+//            kakaoUnlink() //연결해제
+//        }
     }
 
     private fun kakaoLogin() {
@@ -113,12 +114,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun TextMsg(act: Activity, msg : String){
-        binding.tvHashKey.text = msg
+//        binding.tvHashKey.text = msg
     }
 
     private fun setLogin(bool: Boolean){
-        binding.btnStartKakaoLogin.visibility = if(bool) View.GONE else View.VISIBLE
-        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
-        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
+//        binding.btnStartKakaoLogin.visibility = if(bool) View.GONE else View.VISIBLE
+//        binding.btnStartKakaoLogout.visibility = if(bool) View.VISIBLE else View.GONE
+//        binding.btnStartKakaoUnlink.visibility = if(bool) View.VISIBLE else View.GONE
     }
 }

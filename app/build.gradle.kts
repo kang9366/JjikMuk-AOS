@@ -86,7 +86,7 @@ dependencies {
     //view page
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
     // Kakao-SDK
-    implementation ("com.kakao.sdk:v2-user:2.8.5") // 카카오 로그인
+    implementation ("com.kakao.sdk:v2-user:2.11.0") // 카카오 로그인
     implementation ("me.relex:circleindicator:2.1.4")
 
 

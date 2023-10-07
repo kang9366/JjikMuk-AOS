@@ -39,11 +39,11 @@
             android:name=".ui.ViewActivity"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
         <activity
@@ -52,14 +52,18 @@
 
         </activity>
 
-
-
-        <activity android:name=".SplashActivity"
+        <activity android:name=".ui.SplashActivity"
             android:exported="true">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity  android:name=".ui.LoginActivity"
             android:exported="true"/>
+
         <!-- Kakao 로그인 -->
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
@@ -68,15 +72,10 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
-                <!-- scheme-example: "kakao{NATIVE_APP_KEY}" -->
                 <data
                     android:host="oauth"
-                    android:scheme="@string/kakao_app_key2"
-                    />
-
-
+                    android:scheme="@string/kakao_app_key2" />
             </intent-filter>
         </activity>
     </application>

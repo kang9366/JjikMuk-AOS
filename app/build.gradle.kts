@@ -62,6 +62,9 @@ dependencies {
     // BottomAppBar
     implementation("com.google.android.material:material:1.3.0-alpha03")
 
+    //lottie
+    implementation("com.airbnb.android:lottie:5.0.2")
+
     // CircleImageView
     implementation("de.hdodenhof:circleimageview:3.1.0")
 

@@ -1,9 +1,13 @@
 package com.example.jjikmuk.ui.adapter
 
+import android.graphics.Bitmap
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jjikmuk.R
 
@@ -28,4 +32,9 @@ class RecyclerViewAdapter(private val items: ArrayList<Data>): RecyclerView.Adap
         private var view: View = v
         val menu = view.findViewById<TextView>(R.id.menu)
     }
+}
+
+class ImageViewModel : ViewModel() {
+    val imageUri: MutableLiveData<Uri?> = MutableLiveData()
+    val bitmap: MutableLiveData<Bitmap?> = MutableLiveData()
 }

@@ -5,20 +5,22 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.os.PersistableBundle
 import android.view.View
-import android.widget.Toast
-import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityMainBinding
+import com.example.jjikmuk.ui.adapter.ImageViewModel
 import com.example.jjikmuk.ui.dialog.CameraActionListener
 import com.example.jjikmuk.ui.dialog.ImageDialog
 import com.example.jjikmuk.util.BaseActivity
@@ -27,18 +29,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     CameraActionListener {
     private lateinit var navController: NavController
     private var navState : Boolean = true
+    private lateinit var dialog: ImageDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initNavigation()
+        dialog = ImageDialog(this, this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when(resultCode){
             RESULT_OK -> {
-
+//                navigateToNewFragment(CheckImageFragment())
             }
         }
     }
@@ -69,22 +73,32 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
             }
             binding.navState = navState
         }
-
         initImageButton()
     }
 
+//    @SuppressLint("ResourceType")
+//    fun navigateToNewFragment(newFragment: Fragment) {
+//        val transaction = supportFragmentManager.beginTransaction()
+//
+//        transaction.apply {
+//            replace(R.id., newFragment)
+//            addToBackStack(null)
+//            commit()
+//        }
+//
+//    }
+
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {
         if(it != null) {
-            // 사진을 선택한경우
-
-        }else {
-            // 사진 선택 x
+            dialog.closeDialog()
+            val intent = Intent(this@MainActivity, CheckImageActivity::class.java)
+            intent.putExtra("uri", it)
+            startActivity(intent)
         }
     }
 
     private fun initImageButton() {
         binding.navigationFab.setOnClickListener {
-            val dialog = ImageDialog(this, this)
             dialog.initDialog(pickMedia)
         }
     }
@@ -92,6 +106,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     fun requestCameraPermission() {
         when (PackageManager.PERMISSION_GRANTED) {
             ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) -> {
+                dialog.closeDialog()
                 initCamera()
             }
             else -> {
@@ -104,6 +119,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
         if (isGranted) {
+            dialog.closeDialog()
             initCamera()
         } else {
             // 권한을 거부한 경우
@@ -121,11 +137,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     private val takePictureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val imageBitmap = result.data?.extras?.get("data") as Bitmap
+            val intent = Intent(this@MainActivity, CheckImageActivity::class.java)
+            intent.putExtra("bitmap", imageBitmap)
+            startActivity(intent)
         }
     }
 
     override fun onCameraAction() {
         requestCameraPermission()
-        Toast.makeText(this, "fab 터치ㅣㅣ", Toast.LENGTH_SHORT).show()
     }
 }

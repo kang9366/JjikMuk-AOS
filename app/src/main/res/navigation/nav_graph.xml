@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.example.jjikmuk.ui.FirstFragment"
+        android:name="com.example.jjikmuk.ui.HomeFragment"
         android:label="FirstFragment" />
     <fragment
         android:id="@+id/secondFragment"

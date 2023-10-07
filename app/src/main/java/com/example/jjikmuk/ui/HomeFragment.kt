@@ -15,6 +15,7 @@ import com.example.jjikmuk.R
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
 import android.util.Log
+import androidx.fragment.app.Fragment
 import com.example.jjikmuk.databinding.FragmentHomeBinding
 import com.example.jjikmuk.ui.adapter.Data
 import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
@@ -36,7 +37,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.recyclerView.adapter = adapter
     }
 
-    fun test(view: View){
+    fun expandCardView(view: View){
         val transition = LayoutTransition()
         transition.enableTransitionType(LayoutTransition.CHANGING)
         transition.enableTransitionType(LayoutTransition.APPEARING)
@@ -55,54 +56,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_expand) // 여기에 원하는 drawable 리소스 ID를 입력하세요
             binding.expandButton.text = "전체 보기"
             binding.expandButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, drawable, null)
-        }
-    }
-
-    private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {
-        if(it != null) {
-            // 사진을 선택한경우
-
-        }else {
-            // 사진 선택 x
-        }
-    }
-
-    fun initGallery(view: View){
-        pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
-    }
-
-    fun requestCameraPermission(view: View) {
-        when (PackageManager.PERMISSION_GRANTED) {
-            ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) -> {
-                initCamera()
-            }
-            else -> {
-                cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
-            }
-        }
-    }
-
-    private val cameraPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { isGranted ->
-        if (isGranted) {
-            initCamera()
-        } else {
-            // 권한을 거부한 경우
-        }
-    }
-
-    @SuppressLint("QueryPermissionsNeeded")
-    private fun initCamera() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePictureIntent.resolveActivity(requireActivity().packageManager) != null) {
-            takePictureLauncher.launch(takePictureIntent)
-        }
-    }
-
-    private val takePictureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val imageBitmap = result.data?.extras?.get("data") as Bitmap
         }
     }
 }

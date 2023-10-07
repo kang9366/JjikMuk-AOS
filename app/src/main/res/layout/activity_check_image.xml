@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.CheckImageFragment"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이 사진의 식단을 분석할까요?"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textSize="24sp"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="307dp"
+            android:layout_height="293dp"
+            android:layout_marginTop="53dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/finishButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/btn_white"
+            android:text="다시 찍기"
+            android:textSize="18sp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:outlineProvider="none"
+            android:textColor="@color/main_color"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/analyzeButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_orange2"
+            android:text="식단 분석하기"
+            android:textSize="18sp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</layout>

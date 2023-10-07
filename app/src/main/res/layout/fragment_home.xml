@@ -217,6 +217,7 @@
                         android:orientation="horizontal"
                         android:paddingVertical="20dp"
                         android:visibility="gone"
+                        tools:visibility="visible"
                         android:weightSum="3">
 
                         <LinearLayout
@@ -308,109 +309,111 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/hidden2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="20dp"
-                        android:visibility="gone"
-                        android:weightSum="3">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/hidden2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingVertical="20dp"-->
+<!--                        tools:visibility="visible"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:weightSum="3">-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="탄수화물"
-                                android:textSize="14dp"
-                                android:textColor="@color/black"
-                                android:fontFamily="@font/pretendard_semibold"
-                                android:textStyle="bold"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:textSize="24dp"
-                                android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
-                        </LinearLayout>
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="탄수화물"-->
+<!--                                android:textSize="14dp"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:fontFamily="@font/pretendard_semibold"-->
+<!--                                android:textStyle="bold"/>-->
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:textSize="24dp"-->
+<!--                                android:textColor="@color/main_color"-->
+<!--                                android:fontFamily="@font/pretendard_bold"-->
+<!--                                android:text="10g"/>-->
+<!--                        </LinearLayout>-->
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="#D9D9D9" />
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="#D9D9D9" />-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="단백질"
-                                android:textSize="14dp"
-                                android:textColor="@color/black"
-                                android:fontFamily="@font/pretendard_semibold"
-                                android:textStyle="bold"/>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="단백질"-->
+<!--                                android:textSize="14dp"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:fontFamily="@font/pretendard_semibold"-->
+<!--                                android:textStyle="bold"/>-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:textSize="24dp"
-                                android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:textSize="24dp"-->
+<!--                                android:textColor="@color/main_color"-->
+<!--                                android:fontFamily="@font/pretendard_bold"-->
+<!--                                android:text="10g"/>-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="#D9D9D9" />
+<!--                        <View-->
+<!--                            android:layout_width="1dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="#D9D9D9" />-->
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="지방"
-                                android:textSize="14dp"
-                                android:textColor="@color/black"
-                                android:fontFamily="@font/pretendard_semibold"
-                                android:textStyle="bold"/>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="지방"-->
+<!--                                android:textSize="14dp"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:fontFamily="@font/pretendard_semibold"-->
+<!--                                android:textStyle="bold"/>-->
 
-                            <TextView
-                                android:layout_marginStart="3dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:textSize="24dp"
-                                android:textColor="@color/main_color"
-                                android:fontFamily="@font/pretendard_bold"
-                                android:text="10g"/>
-                        </LinearLayout>
-                    </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_marginStart="3dp"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="8dp"-->
+<!--                                android:textSize="24dp"-->
+<!--                                android:textColor="@color/main_color"-->
+<!--                                android:fontFamily="@font/pretendard_bold"-->
+<!--                                android:text="10g"/>-->
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
 
                     <LinearLayout
                         android:id="@+id/hidden3"
                         android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        tools:visibility="visible"
                         android:orientation="horizontal"
                         android:layout_marginStart="29dp"
                         android:layout_marginEnd="29dp"

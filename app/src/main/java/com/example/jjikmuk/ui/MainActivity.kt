@@ -15,15 +15,18 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityMainBinding
+import com.example.jjikmuk.network.RetrofitBuilder.api
 import com.example.jjikmuk.ui.adapter.ImageViewModel
 import com.example.jjikmuk.ui.dialog.CameraActionListener
 import com.example.jjikmuk.ui.dialog.ImageDialog
 import com.example.jjikmuk.util.BaseActivity
+import kotlinx.coroutines.launch
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     CameraActionListener {
@@ -36,6 +39,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
         super.onCreate(savedInstanceState)
         initNavigation()
         dialog = ImageDialog(this, this)
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -16,16 +16,23 @@ import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
 import com.example.jjikmuk.databinding.FragmentHomeBinding
+import com.example.jjikmuk.network.RetrofitBuilder
 import com.example.jjikmuk.ui.adapter.Data
 import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+    private val dietResponse = MutableLiveData<DietResponse>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.home = this
         initRecyclerView()
+
+        setupDietData()
     }
 
     private fun initRecyclerView(){
@@ -37,6 +44,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.recyclerView.adapter = adapter
     }
 
+    private fun setupDietData() {
+        lifecycleScope.launch {
+            val response = RetrofitBuilder.api.getDiet(1).body()
+            dietResponse.postValue(response!!)
+        }
+    }
+
     fun expandCardView(view: View){
         val transition = LayoutTransition()
         transition.enableTransitionType(LayoutTransition.CHANGING)
@@ -46,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         val v = if(binding.hidden1.visibility == View.GONE) View.VISIBLE else View.GONE
         binding.hidden1.visibility = v
-        binding.hidden2.visibility = v
+//        binding.hidden2.visibility = v
         binding.hidden3.visibility = v
         if(v.toString()=="0"){
             val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_fold) // 여기에 원하는 drawable 리소스 ID를 입력하세요

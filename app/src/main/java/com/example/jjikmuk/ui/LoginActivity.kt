@@ -1,10 +1,12 @@
 package com.example.jjikmuk.ui
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import android.view.View
+import com.example.jjikmuk.AfterLoginActivity
 
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityLoginBinding
@@ -80,6 +82,7 @@ class LoginActivity : AppCompatActivity() {
                 } else if (token != null) {
                     TextMsg(this, "카카오톡으로 로그인 성공 ${token.accessToken}")
                     setLogin(true)
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 }
             }
         } else {

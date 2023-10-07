@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import com.example.jjikmuk.R
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
+import android.util.Log
 import com.example.jjikmuk.databinding.FragmentHomeBinding
 import com.example.jjikmuk.ui.adapter.Data
 import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
@@ -29,17 +30,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private fun initRecyclerView(){
         val item = ArrayList<Data>()
         for(i in 0 until 10){
-            item.add(Data("1"))
+            item.add(Data("고등어 구이"))
         }
         val adapter = RecyclerViewAdapter(item)
         binding.recyclerView.adapter = adapter
-
     }
 
     fun test(view: View){
-        binding.layouts.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
-        val v = if(binding.details.visibility==View.GONE) View.VISIBLE else View.GONE
-        binding.details.visibility = v
+        val transition = LayoutTransition()
+        transition.enableTransitionType(LayoutTransition.CHANGING)
+        transition.enableTransitionType(LayoutTransition.APPEARING)
+        transition.enableTransitionType(LayoutTransition.DISAPPEARING)
+        binding.layouts.layoutTransition = transition
+
+        val v = if(binding.hidden1.visibility == View.GONE) View.VISIBLE else View.GONE
+        binding.hidden1.visibility = v
+        binding.hidden2.visibility = v
+        binding.hidden3.visibility = v
+        if(v.toString()=="0"){
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_fold) // 여기에 원하는 drawable 리소스 ID를 입력하세요
+            binding.expandButton.text = "접기"
+            binding.expandButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, drawable, null)
+        }else{
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_expand) // 여기에 원하는 drawable 리소스 ID를 입력하세요
+            binding.expandButton.text = "전체 보기"
+            binding.expandButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, drawable, null)
+        }
     }
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {

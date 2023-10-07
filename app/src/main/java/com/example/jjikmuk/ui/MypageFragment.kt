@@ -28,5 +28,7 @@ class MypageFragment : BaseFragment<FragmentMypageBinding>(R.layout.fragment_myp
         datas.add(BarEntry(1.2f,20.0f))
         datas.add(BarEntry(1.2f,20.0f))
         datas.add(BarEntry(1.2f,20.0f))
+
+
     }
 }

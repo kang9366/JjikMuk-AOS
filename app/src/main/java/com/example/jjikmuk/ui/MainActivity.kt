@@ -1,8 +1,10 @@
 package com.example.jjikmuk.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.NavController
@@ -50,8 +52,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
 
         binding.navigationFab.setOnClickListener {
+            val REQUEST_IMAGE_CAPTURE = 1
 
-            Toast.makeText(this, "fab 터치ㅣㅣ", Toast.LENGTH_SHORT).show()
+            Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+                takePictureIntent.resolveActivity(packageManager)?.also {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                }
+            }
+
         }
     }
 }

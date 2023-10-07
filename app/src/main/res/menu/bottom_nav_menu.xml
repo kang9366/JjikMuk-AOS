@@ -6,10 +6,8 @@
         android:id="@+id/firstFragment"
         android:icon="@drawable/ic_home" />
     <item
-        android:title="검색"
-        android:enabled="true"
-        android:id="@+id/secondFragment"
-        android:icon="@drawable/ic_home" />
+        android:title=""
+        android:enabled="false"/>
     <item
         android:title="내정보"
         android:enabled="true"

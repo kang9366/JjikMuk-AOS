@@ -24,5 +24,8 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         binding.bottomNavigationBar.setupWithNavController(navController)
+
+        binding.bottomNavigationBar.background = null
+        binding.bottomNavigationBar.menu.getItem(1).isEnabled = false
     }
 }

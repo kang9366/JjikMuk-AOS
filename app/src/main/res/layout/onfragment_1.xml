@@ -4,8 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0FFFFFFF"
+    android:background="#FFFFFF"
     tools:context=".ui.OnFragment1">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/onStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="8dp"
+        android:src="@drawable/indicator1"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/onStart" />
 
     <TextView
         android:id="@+id/textView1"
@@ -15,6 +34,8 @@
         android:text="나의 식단을 기록하고,\n어떤 영양소가 부족한지 알 수 있어요"
         android:layout_marginTop="143dp"
         android:textSize="20sp"
+        android:fontFamily="@font/pretendard_bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +43,7 @@
         app:layout_constraintVertical_bias="0" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="285dp"
         android:layout_height="341dp"
         android:layout_marginTop="251dp"
@@ -31,4 +53,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
+
+<!--    <Button-->
+<!--        android:id="@+id/btnNext"-->
+<!--        android:layout_width="359dp"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="694dp"-->
+<!--        android:fontFamily="@font/pretendard_semibold"-->
+<!--        android:text="다음"-->
+<!--        android:backgroundTint="@color/main_color"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

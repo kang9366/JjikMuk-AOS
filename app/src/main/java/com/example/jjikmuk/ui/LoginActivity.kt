@@ -3,14 +3,12 @@ package com.example.jjikmuk.ui
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+
 import android.view.View
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+
 import com.example.jjikmuk.R
 import com.example.jjikmuk.databinding.ActivityLoginBinding
-import com.example.jjikmuk.databinding.ActivityMainBinding
-import com.example.jjikmuk.network.RetrofitBuilder.api
+
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError

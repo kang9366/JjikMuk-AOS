@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
         maven{ url = uri("https://jitpack.io") }
         //KakaoSDK repository
         maven { url = uri("https://devrepo.kakao.com/nexus/content/groups/public/")}

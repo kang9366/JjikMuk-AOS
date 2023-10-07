@@ -56,6 +56,8 @@ dependencies {
 
     // MpChart
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    // RecyclerView
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
 
     // BottomAppBar
     implementation("com.google.android.material:material:1.3.0-alpha03")

@@ -15,18 +15,31 @@ import com.example.jjikmuk.R
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
 import com.example.jjikmuk.databinding.FragmentHomeBinding
+import com.example.jjikmuk.ui.adapter.Data
+import com.example.jjikmuk.ui.adapter.RecyclerViewAdapter
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.home = this
+        binding.home = this
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView(){
+        val item = ArrayList<Data>()
+        for(i in 0 until 10){
+            item.add(Data("1"))
+        }
+        val adapter = RecyclerViewAdapter(item)
+        binding.recyclerView.adapter = adapter
+
     }
 
     fun test(view: View){
-        binding?.layouts?.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
-        val v = if(binding?.details?.visibility==View.GONE) View.VISIBLE else View.GONE
-        binding?.details?.visibility = v
+        binding.layouts.layoutTransition?.enableTransitionType(LayoutTransition.CHANGING)
+        val v = if(binding.details.visibility==View.GONE) View.VISIBLE else View.GONE
+        binding.details.visibility = v
     }
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) {

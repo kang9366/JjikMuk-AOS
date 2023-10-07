@@ -9,8 +9,8 @@
         android:title=""
         android:enabled="false"/>
     <item
-        android:title="내정보"
+        android:title="마이"
         android:enabled="true"
-        android:id="@+id/thirdFragment"
+        android:id="@+id/mypageFragment"
         android:icon="@drawable/ic_home" />
 </menu>

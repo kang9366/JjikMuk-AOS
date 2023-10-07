@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.jjikmuk.R
 
-class ThirdFragment : Fragment() {
+class MypageFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_third, container, false)
+        return inflater.inflate(R.layout.fragment_mypage, container, false)
     }
 }

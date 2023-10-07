@@ -12,7 +12,7 @@ data class Data(val test: String)
 class RecyclerViewAdapter(private val items: ArrayList<Data>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.textView.text = item.test
+        holder.menu.text = item.test
     }
 
     override fun getItemCount(): Int {
@@ -26,6 +26,6 @@ class RecyclerViewAdapter(private val items: ArrayList<Data>): RecyclerView.Adap
 
     inner class ViewHolder(v: View): RecyclerView.ViewHolder(v){
         private var view: View = v
-        val textView = view.findViewById<TextView>(R.id.textView)
+        val menu = view.findViewById<TextView>(R.id.menu)
     }
 }

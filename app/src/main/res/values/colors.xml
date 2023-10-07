@@ -8,4 +8,5 @@
     <color name="cal_bad">#FF6E2D</color>
     <color name="chart_yellow">#FFEC43</color>
     <color name="chart_blue">#1799F8</color>
+    <color name="background_color">#FFFAF5</color>
 </resources>

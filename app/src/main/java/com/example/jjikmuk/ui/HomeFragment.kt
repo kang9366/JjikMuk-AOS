@@ -12,12 +12,12 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.example.jjikmuk.R
-import com.example.jjikmuk.databinding.FragmentFirstBinding
 import com.example.jjikmuk.util.BaseFragment
 import android.content.pm.PackageManager
+import com.example.jjikmuk.databinding.FragmentHomeBinding
 
 
-class HomeFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.home = this

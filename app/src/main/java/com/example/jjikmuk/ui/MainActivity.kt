@@ -50,6 +50,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
 
         binding.navigationFab.setOnClickListener {
+
             Toast.makeText(this, "fab 터치ㅣㅣ", Toast.LENGTH_SHORT).show()
         }
     }

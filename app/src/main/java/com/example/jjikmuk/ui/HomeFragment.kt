@@ -38,12 +38,39 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 call: Call<InsufficientNutrientResponse>,
                 response: Response<InsufficientNutrientResponse>
             ) {
-                binding.num1.text = response.body()!!.nutrientInfoList[0].amount.toString() + "g"
-                binding.name1.text = response.body()!!.nutrientInfoList[0].name
+                val data = response.body()!!
+
+                binding.num1.text = data.nutrientInfoList[0].amount.toString() + "mg"
+                binding.name1.text = data.nutrientInfoList[0].name
+                binding.type1.text = if (data.nutrientInfoList[0].amount < 15.3) {
+                    "부족해요"
+                } else if (data.nutrientInfoList[0].amount > 18.7) {
+                    "과해요"
+                } else {
+                    "충분해요"
+                }
+
                 binding.name2.text = response.body()!!.nutrientInfoList[1].name
                 binding.num2.text = response.body()!!.nutrientInfoList[1].amount.toString() + "g"
+                binding.type2.text = if (data.nutrientInfoList[1].amount < 40.5) {
+                    "부족해요"
+                } else if (data.nutrientInfoList[1].amount > 49.5) {
+                    "과해요"
+                } else {
+                    "충분해요"
+                }
+
                 binding.name3.text = response.body()!!.nutrientInfoList[2].name
-                binding.num3.text = response.body()!!.nutrientInfoList[2].amount.toString() + "g"
+                binding.num3.text = response.body()!!.nutrientInfoList[2].amount.toString() + "mg"
+                binding.type3.text = if (data.nutrientInfoList[2].amount < 8.1) {
+                    "부족해요"
+                } else if (data.nutrientInfoList[2].amount > 9.9) {
+                    "과해요"
+                } else {
+                    "충분해요"
+                }
+
+
                 binding.menu.text = response.body()!!.goodDietName
             }
 

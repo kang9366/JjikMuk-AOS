@@ -3,6 +3,8 @@ package com.example.jjikmuk.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.View
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -17,8 +19,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
 
         initNavigation()
     }
@@ -35,7 +35,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         binding.navState = navState
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.homeFragment || destination.id == R.id.mypageFragment) {
+                binding.bottomAppBar.visibility = View.VISIBLE
+                binding.navigationFab.visibility = View.VISIBLE
 
+                navState = true
+            } else {
+                binding.bottomAppBar.visibility = View.GONE
+                binding.navigationFab.visibility = View.GONE
+
+                navState = false
+            }
+            binding.navState = navState
+        }
+
+        binding.navigationFab.setOnClickListener {
+            Toast.makeText(this, "fab 터치ㅣㅣ", Toast.LENGTH_SHORT).show()
         }
     }
 }

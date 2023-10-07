@@ -1,14 +1,18 @@
 package com.example.jjikmuk.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.jjikmuk.R
+import com.example.jjikmuk.databinding.FragmentMypageBinding
+import com.example.jjikmuk.util.BaseFragment
 
-class MypageFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_mypage, container, false)
+class MypageFragment : BaseFragment<FragmentMypageBinding>(R.layout.fragment_mypage) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.root.setOnClickListener {
+
+        }
     }
 }

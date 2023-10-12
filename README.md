@@ -23,7 +23,6 @@ yolov5 모델을 이용해 식단의 영양 성분을 식별하고 부족한 영
 <img width="1055" alt="image" src="https://github.com/kang9366/JjikMuk-AOS/assets/63611804/446e8654-7667-477b-bfb7-b17fb88edbe0">
 
 ![KakaoTalk_Photo_2023-10-09-00-17-46](https://github.com/kang9366/JjikMuk-AOS/assets/63611804/f4d6420f-4750-48e1-902d-dadb6dd74f7b)
-![KakaoTalk_Photo_2023-10-09-00-17-46](https://github.com/kang9366/JjikMuk-AOS/assets/63611804/f338ed81-4ff4-42ff-9886-2ce5a45a221c)
 ![KakaoTalk_Photo_2023-10-09-00-17-56](https://github.com/kang9366/JjikMuk-AOS/assets/63611804/b94a68f6-eb46-4ea0-a140-eab80ead57fc)
 ![KakaoTalk_Photo_2023-10-09-00-18-15](https://github.com/kang9366/JjikMuk-AOS/assets/63611804/90fa34d9-3200-4712-9620-c45945cdb57c)
 
